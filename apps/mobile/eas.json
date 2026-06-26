@@ -1,0 +1,31 @@
+{
+  "cli": {
+    "version": ">= 20.3.0",
+    "appVersionSource": "remote"
+  },
+  "build": {
+    "development": {
+      "developmentClient": true,
+      "distribution": "internal",
+      "android": {
+        "buildType": "apk"          // ✅ installable dev APK
+      }
+    },
+    "preview": {
+      "distribution": "internal",
+      "android": {
+        "buildType": "apk"          // ✅ THIS is what generates the .apk
+      },
+      "env": {
+        "GOOGLE_MAPS_API_KEY": "AIzaSyASww0DUVC0nuAZ_Bsz5os9HTvmAJOl3Rs"   // ✅ or use EAS Secret
+      }
+    },
+    "production": {
+      "autoIncrement": true
+      // AAB by default — correct for Play Store
+    }
+  },
+  "submit": {
+    "production": {}
+  }
+}
